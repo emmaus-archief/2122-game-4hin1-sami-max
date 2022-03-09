@@ -9,9 +9,22 @@ Gemaakt door:
 *korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
 
 ## Mijn planning
-Werk de planning af van boven naar beneden<br>
-Geef aan met [x] welke onderdelen af zijn
-
+1. maak een blokje (de speler)
+2. de achtergrond bewegen
+3. de speler laten vliegen
+4. een tegenstander maken
+5. de speler laten bewegen met blokjes
+6. meer blokjes maken (arrays)
+7. grapple maken
+8. zwaartekracht
+9. lava
+10. tegenstander 2/ verbeteren
+11. dood kunnen gaan
+12. winnen
+13. decoratie
+14. menu
+15. instellingen
+16. score of levels
 ### Basisstappen
 Basis: uitleg, spelen, afgaan en punten
 - [x] 1. maak index.html, style.css en script.js met canvas
