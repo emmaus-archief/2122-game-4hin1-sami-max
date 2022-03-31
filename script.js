@@ -51,7 +51,8 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-  
+    fill(225,225,225,1);
+  rect(50,100, 250, 720);
   // vijand
 
   // kogel
@@ -61,10 +62,13 @@ var tekenAlles = function () {
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX , spelerY, 10, 10);
-
   // punten en health
 
 };
+
+  //fill(black)
+  //rect(0,0,1280,720)
+
 
 /**
  * return true als het gameover is
@@ -89,7 +93,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background('black');
 }
 
 /**
