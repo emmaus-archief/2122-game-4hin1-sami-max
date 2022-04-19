@@ -49,10 +49,19 @@ var verwerkBotsing = function () {
 /**
  * Tekent spelscherm
  */
+var x = 300
+var i = 10
 var tekenAlles = function () {
   // achtergrond
-    fill(225,225,225,1);
-  rect(50,100, 250, 720);
+  draw = function() {
+    fill(100,100,100);
+    var x = 300;
+while (x < 1000) {
+    rect(50,100, 250, 720);
+    rect(x+50,100, 250, 720);
+    x += 300;
+  r = r - 1
+}
   // vijand
 
   // kogel
