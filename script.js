@@ -49,16 +49,17 @@ var verwerkBotsing = function () {
 /**
  * Tekent spelscherm
  */
+
+var speed = 5;
 var x = 300
+
 var tekenAlles = function () {
-  // achtergrond
-    fill(100,100,100);
-    var x = 300;
-while (x < 2000) {
-    rect(50,100, 250, 720);
+  
+        fill(100,100,100);
+      for (var x = 300; x < 5000; x+= 300) {
+            rect(50,100, 250, 720);
     rect(x+50,100, 250, 720);
-    x += 300;
-}
+};
   // vijand
 
   // kogel
