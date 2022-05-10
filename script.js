@@ -17,6 +17,8 @@ var spelStatus = SPELEN;
 var spelerX = 525; // x-positie van speler
 var spelerY = 450; // y-positie van speler
 
+var startX = 1100;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -50,16 +52,15 @@ var verwerkBotsing = function () {
  * Tekent spelscherm
  */
 
-var speed = 5;
-var x = 300
-
 var tekenAlles = function () {
   
-        fill(100,100,100);
-      for (var x = 300; x < 5000; x+= 300) {
-            rect(50,100, 250, 720);
-    rect(x+50,100, 250, 720);
-};
+  fill(100,100,100);       
+  //for (var x = startX; x < 5000; x+= 300) {
+      background('black');
+
+    rect(startX,100, 250, 720);
+ // };
+  startX = startX - 3;
   // vijand
 
   // kogel
