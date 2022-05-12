@@ -56,11 +56,10 @@ var tekenAlles = function () {
   
   fill(100,100,100);       
   //for (var x = startX; x < 5000; x+= 300) {
-      background('black');
-
+    background('black');
     rect(startX,100, 250, 720);
  // };
-  startX = startX - 3;
+    startX = startX - 3;
   // vijand
 
   // kogel
