@@ -58,6 +58,9 @@ var tekenAlles = function () {
   //for (var x = startX; x < 5000; x+= 300) {
     background('black');
     rect(startX,100, 250, 720);
+  if (startX < 1 ) {
+    strartX = 400;
+  }
  // };
     startX = startX - 3;
   // vijand
