@@ -55,13 +55,13 @@ var verwerkBotsing = function () {
 var tekenAlles = function () {
   
   fill(100,100,100);       
-  //for (var x = startX; x < 5000; x+= 300) {
     background('black');
+  //for (var x = startX; x < 50; x+= 300) {
     rect(startX,100, 250, 720);
-  if (startX < 1 ) {
-    strartX = 400;
-  }
- // };
+    if(startX <= -250){
+      startX=1280
+    }
+  //}
     startX = startX - 3;
   // vijand
 
