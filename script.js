@@ -18,6 +18,7 @@ var spelerX = 525; // x-positie van speler
 var spelerY = 450; // y-positie van speler
 
 var startX = 1100;
+var startI = 1400;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -58,11 +59,17 @@ var tekenAlles = function () {
     background('black');
   //for (var x = startX; x < 50; x+= 300) {
     rect(startX,100, 250, 720);
+    rect(startI,100, 250, 720);
+
     if(startX <= -250){
       startX=1280
     }
+      if(startI <= -250){
+      startI=1280
+    }
   //}
     startX = startX - 3;
+    startI = startI - 3;
   // vijand
 
   // kogel
