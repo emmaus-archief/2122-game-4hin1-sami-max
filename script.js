@@ -19,6 +19,8 @@ var spelerY = 450; // y-positie van speler
 
 var startX = 1100;
 var startI = 1400;
+var startY= 100
+var startJ= 200
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -58,15 +60,25 @@ var tekenAlles = function () {
   fill(100,100,100);       
     background('black');
   //for (var x = startX; x < 50; x+= 300) {
-    rect(startX,100, 250, 720);
-    rect(startI,100, 250, 720);
+    rect(startX,startY, 100, 100);
+    rect(startI,startJ, 100, 100);
 
     if(startX <= -250){
       startX=1280
     }
+  
+    if(startX === 1280){
+      startY = random(301)
+    }
+  
       if(startI <= -250){
       startI=1280
     }
+  
+      if(startI === 1280){
+      startJ = random(301)
+    }
+  
   //}
     startX = startX - 3;
     startI = startI - 3;
@@ -120,6 +132,7 @@ function setup() {
  */
 function draw() {
   if (spelStatus === SPELEN) {
+    console.log("spelen");
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
@@ -128,6 +141,15 @@ function draw() {
     }
   }
   if (spelStatus === GAMEOVER) {
+    fill
+    textSize(50)
+    text
+    console.log("gameover");
+    if (KeyIsDown(32)) {
+      spelerX = 525;
+      spelstatus = SPELEN;
+    }
+    
     // teken game-over scherm
 
   }
