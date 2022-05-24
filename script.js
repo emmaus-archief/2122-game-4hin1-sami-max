@@ -19,8 +19,10 @@ var spelerY = 450; // y-positie van speler
 
 var startX = 1100;
 var startI = 1400;
-var startY= 100
-var startJ= 200
+var startY= 100;
+var startJ= 200;
+var numX = [1100,1400,1700];
+var indexX = 0;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -60,28 +62,19 @@ var tekenAlles = function () {
   fill(100,100,100);       
     background('black');
   //for (var x = startX; x < 50; x+= 300) {
-    rect(startX,startY, 100, 100);
-    rect(startI,startJ, 100, 100);
 
-    if(startX <= -250){
-      startX=1280
-    }
+    rect(numX[indexX],startY, 100, 100);
+
+    if(numX[indexX] <= -250){
+      numX[indexX]=1280
+      indexX = indexX + 1;
+    };
   
-    if(startX === 1280){
-      startY = random(301)
-    }
-  
-      if(startI <= -250){
-      startI=1280
-    }
-  
-      if(startI === 1280){
-      startJ = random(301)
-    }
-  
-  //}
-    startX = startX - 3;
-    startI = startI - 3;
+    if(numX[indexX] === 1280){
+      startY = random(301);
+    };
+
+    numX[indexX] = numX[indexX] - 3;
   // vijand
 
   // kogel
