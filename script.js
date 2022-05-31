@@ -18,9 +18,12 @@ var spelerX = 525; // x-positie van speler
 var spelerY = 450; // y-positie van speler
 
 var startX = 1100;
-var startI = 1400;
+var startI = 1350;
+var startJ= 1500;
+var startK = 1650;
+var startL = 1800;
+
 var startY= 100;
-var startJ= 200;
 var numX = [1100,1400,1700];
 var indexX = 0;
 
@@ -63,18 +66,43 @@ var tekenAlles = function () {
     background('black');
   //for (var x = startX; x < 50; x+= 300) {
 
-    rect(numX[indexX],startY, 100, 100);
-
-    if(numX[indexX] <= -250){
-      numX[indexX]=1280
-      indexX = indexX + 1;
-    };
-  
-    if(numX[indexX] === 1280){
+    rect(startX,startY, 100, 100);
+    if(startX <= -250){
+      startX=1280
+    };if(startX === 1280){
       startY = random(301);
-    };
+    };startX = startX - 3;
 
-    numX[indexX] = numX[indexX] - 3;
+      rect(startI,startY, 100, 100);
+    if(startI <= -250){
+      startI=1280
+    };if(startI === 1280){
+      startY = random(301);
+    };startI = startI - 6;
+
+      rect(startJ,startY, 100, 100);
+    if(startJ <= -250){
+      startJ=1280
+    };if(startJ === 1280){
+      startY = random(301);
+    };startJ = startJ - 9;
+
+      rect(startX,startY, 100, 100);
+    if(startX <= -250){
+      startX=1280
+    };if(startX === 1280){
+      startY = random(301);
+    };startX = startX - 3;
+  
+      rect(startX,startY, 100, 100);
+    if(startX <= -250){
+      startX=1280
+    };if(startX === 1280){
+      startY = random(301);
+    };startX = startX - 3;
+
+
+  
   // vijand
 
   // kogel
