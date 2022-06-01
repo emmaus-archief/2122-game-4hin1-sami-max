@@ -9,9 +9,13 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-
+const KEY_LEFT = 37;
+const KEY_RIGHT = 39;
+const KEY_UP = 38;
+const KEY_DOWN = 40;
 const SPELEN = 1;
 const GAMEOVER = 2;
+
 var spelStatus = SPELEN;
 
 var spelerX = 525; // x-positie van speler
@@ -19,7 +23,7 @@ var spelerY = 450; // y-positie van speler
 
 var startX = 1100;
 var startI = 1350;
-var startJ= 1500;
+var startJ = 1500;
 var startK = 1650;
 var startL = 1800;
 
@@ -36,10 +40,31 @@ var indexX = 0;
  */
 var beweegAlles = function () {
   // speler
-
   // vijand
 
   // kogel
+
+};
+
+//if(KeyIsDown(RIGHT_ARROW) = true) {
+//  code
+//}
+
+function keyPressed() {
+  if (keyCode === KEY_UP) {
+    spelerY = spelerY - 20;
+  }
+  if (keyCode === KEY_DOWN) {
+    spelerY = spelerY + 20;
+  }
+
+  if (keyCode === KEY_RIGHT) {
+    spelerX = spelerX + 20;
+  }
+
+  if (keyCode === KEY_LEFT) {
+    spelerX = spelerX - 20;
+  }
 };
 
 /**
@@ -70,39 +95,22 @@ var tekenAlles = function () {
     if(startX <= -250){
       startX=1280
     };if(startX === 1280){
-      startY = random(301);
+      startY = random(700);
     };startX = startX - 3;
 
-      rect(startI,startY, 100, 100);
+      rect(startI,startK, 100, 100);
     if(startI <= -250){
       startI=1280
     };if(startI === 1280){
-      startY = random(301);
+      startK = random(700);
     };startI = startI - 6;
 
-      rect(startJ,startY, 100, 100);
+      rect(startX,startJ, 100, 100);
     if(startJ <= -250){
       startJ=1280
     };if(startJ === 1280){
-      startY = random(301);
+      startL = random(700);
     };startJ = startJ - 9;
-
-      rect(startX,startY, 100, 100);
-    if(startX <= -250){
-      startX=1280
-    };if(startX === 1280){
-      startY = random(301);
-    };startX = startX - 3;
-  
-      rect(startX,startY, 100, 100);
-    if(startX <= -250){
-      startX=1280
-    };if(startX === 1280){
-      startY = random(301);
-    };startX = startX - 3;
-
-
-  
   // vijand
 
   // kogel
