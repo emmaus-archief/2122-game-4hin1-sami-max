@@ -31,6 +31,8 @@ var startY= 100;
 var numX = [1100,1400,1700];
 var indexX = 0;
 
+var enemyX1 = startX = startX - 3
+var enemyY1 = startY
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -58,6 +60,9 @@ if (keyIsDown(KEY_UP)) {
   spelerX = spelerX - 3;
 }
 
+  if (keyIsDown(KEY_RIGHT)) { 
+  spelerX = spelerX + 3;
+}
 
 };
 //function keyPressed() {
@@ -84,7 +89,10 @@ if (keyIsDown(KEY_UP)) {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+if (spelerX === enemyX1 && 
+   spelerY === enemyY1) {
+  console.log("botsing");
+   }
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -121,6 +129,8 @@ var tekenAlles = function () {
     };if(startJ === 1280){
       startL = random(700);
     };startJ = startJ - 9;
+
+  
   // vijand
 
   // kogel
