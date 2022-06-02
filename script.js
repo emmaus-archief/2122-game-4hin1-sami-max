@@ -44,28 +44,38 @@ var beweegAlles = function () {
 
   // kogel
 
+
+
+if (keyIsDown(KEY_UP)) { 
+  spelerY = spelerY - 3;
+}
+
+  if (keyIsDown(KEY_DOWN)) { 
+  spelerY = spelerY + 3;
+}
+
+  if (keyIsDown(KEY_LEFT)) { 
+  spelerX = spelerX - 3;
+}
+
+
 };
+//function keyPressed() {
+ // if (keyCode === KEY_UP) {
+ //   spelerY = spelerY - 20;
+ // }
+ // if (keyCode === KEY_DOWN) {
+ //   spelerY = spelerY + 20;
+ // }
 
-//if(KeyIsDown(RIGHT_ARROW) = true) {
-//  code
-//}
+ // if (keyCode === KEY_RIGHT) {
+ //   spelerX = spelerX + 20;
+ // }
 
-function keyPressed() {
-  if (keyCode === KEY_UP) {
-    spelerY = spelerY - 20;
-  }
-  if (keyCode === KEY_DOWN) {
-    spelerY = spelerY + 20;
-  }
-
-  if (keyCode === KEY_RIGHT) {
-    spelerX = spelerX + 20;
-  }
-
-  if (keyCode === KEY_LEFT) {
-    spelerX = spelerX - 20;
-  }
-};
+ // if (keyCode === KEY_LEFT) {
+  //  spelerX = spelerX - 20;
+ //}
+//};
 
 /**
  * Checkt botsingen
