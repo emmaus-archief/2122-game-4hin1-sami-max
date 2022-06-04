@@ -68,10 +68,24 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-if (spelerX - ememyX1 < 100 &&
-    spelerX - ememyX1 > -100 && 
-    spelerY - enemyY1 < 100 &&
-    spelerY - enemyY1 > -100) {
+if (spelerX - startX < 100 &&
+    spelerX - startX > -100 && 
+    spelerY - startY < 100 &&
+    spelerY - startY > -100) {
+    console.log("Botsing");
+   }
+
+  if (spelerX - startI < 100 &&
+    spelerX - startI > -100 && 
+    spelerY - startK < 100 &&
+    spelerY - startK > -100) {
+    console.log("Botsing");
+   }
+
+  if (spelerX - startL < 100 &&
+    spelerX - startL > -100 && 
+    spelerY - startJ < 100 &&
+    spelerY - startJ > -100) {
     console.log("Botsing");
    }
   // botsing kogel tegen vijand
@@ -92,25 +106,25 @@ var tekenAlles = function () {
 
   // vijand
     rect(startX,startY, 100, 100);
-    //if(startX <= -250){
-    // startX=1280
-    //};if(startX === 1280){
-    //  startY = random(700);
-    //};startX = startX - 3;
+    if(startX <= -250){
+     startX=1280
+    };if(startX === 1280){
+      startY = random(700);
+    };startX = startX - 4;
 
       rect(startI,startK, 100, 100);
     if(startI <= -250){
       startI=1280
     };if(startI === 1280){
       startK = random(700);
-    };startI = startI - 6;
+    };startI = startI - 7;
 
-      rect(startX,startJ, 100, 100);
+      rect(startL,startJ, 100, 100);
     if(startJ <= -250){
       startJ=1280
     };if(startJ === 1280){
-      startL = random(700);
-    };startJ = startJ - 9;
+      startL = random(1200);
+    };startJ = startJ - 7;
   // kogel
 
   // speler
