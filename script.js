@@ -13,6 +13,7 @@ const KEY_LEFT = 37;
 const KEY_RIGHT = 39;
 const KEY_UP = 38;
 const KEY_DOWN = 40;
+const SPACE = 32;
 const SPELEN = 1;
 const GAMEOVER = 2;
 
@@ -29,8 +30,6 @@ var startY= 100;
 var startK = 1650;
 var startL = 1800;
 
-var ememyX1 = 1100
-var enemyY1 = 100
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -68,32 +67,18 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-if (spelerX - startX < 100 &&
-    spelerX - startX > -100 && 
-    spelerY - startY < 100 &&
-    spelerY - startY > -100) {
-    console.log("Botsing");
-   }
 
-  if (spelerX - startI < 100 &&
-    spelerX - startI > -100 && 
-    spelerY - startK < 100 &&
-    spelerY - startK > -100) {
-    console.log("Botsing");
-   }
-
-  if (spelerX - startL < 100 &&
-    spelerX - startL > -100 && 
-    spelerY - startJ < 100 &&
-    spelerY - startJ > -100) {
-    console.log("Botsing");
-   }
   // botsing kogel tegen vijand
 
   // update punten en health
 
 };
 
+var gameover2 = function () {
+    fill(100,100,100); 
+    textSize(50)
+    text("game over",100,100)
+};
 /**
  * Tekent spelscherm
  */
@@ -145,6 +130,29 @@ var tekenAlles = function () {
  * anders return false
  */
 var checkGameOver = function () {
+  if (spelerX - startX < 100 &&
+    spelerX - startX > -100 && 
+    spelerY - startY < 100 &&
+    spelerY - startY > -100) {
+    console.log("Botsing");
+    return true;
+   }
+
+  if (spelerX - startI < 100 &&
+    spelerX - startI > -100 && 
+    spelerY - startK < 100 &&
+    spelerY - startK > -100) {
+    console.log("Botsing");
+    return true;
+   }
+
+  if (spelerX - startL < 100 &&
+    spelerX - startL > -100 && 
+    spelerY - startJ < 100 &&
+    spelerY - startJ > -100) {
+    console.log("Botsing");
+    return true;
+    }
   // check of HP 0 is , of tijd op is, of ...
   return false;
 };
@@ -182,12 +190,11 @@ function draw() {
     }
   }
   if (spelStatus === GAMEOVER) {
-    fill
-    textSize(50)
-    text
     console.log("gameover");
-    if (KeyIsDown(32)) {
-      spelerX = 525;
+    gameover2();
+    if (keyIsDown(32)) {
+      spelerX = 1100;
+      startY= 100;
       spelstatus = SPELEN;
     }
     
