@@ -24,15 +24,13 @@ var spelerY = 450; // y-positie van speler
 var startX = 1100;
 var startI = 1350;
 var startJ = 1500;
+
+var startY= 100;
 var startK = 1650;
 var startL = 1800;
 
-var startY= 100;
-var numX = [1100,1400,1700];
-var indexX = 0;
-
-var enemyX1 = startX = startX - 3
-var enemyY1 = startY
+var ememyX1 = 1100
+var enemyY1 = 100
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -42,13 +40,7 @@ var enemyY1 = startY
  */
 var beweegAlles = function () {
   // speler
-  // vijand
-
-  // kogel
-
-
-
-if (keyIsDown(KEY_UP)) { 
+  if (keyIsDown(KEY_UP)) { 
   spelerY = spelerY - 3;
 }
 
@@ -65,22 +57,9 @@ if (keyIsDown(KEY_UP)) {
 }
 
 };
-//function keyPressed() {
- // if (keyCode === KEY_UP) {
- //   spelerY = spelerY - 20;
- // }
- // if (keyCode === KEY_DOWN) {
- //   spelerY = spelerY + 20;
- // }
+  // vijand
 
- // if (keyCode === KEY_RIGHT) {
- //   spelerX = spelerX + 20;
- // }
-
- // if (keyCode === KEY_LEFT) {
-  //  spelerX = spelerX - 20;
- //}
-//};
+  // kogel
 
 /**
  * Checkt botsingen
@@ -89,9 +68,11 @@ if (keyIsDown(KEY_UP)) {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-if (spelerX === enemyX1 && 
-   spelerY === enemyY1) {
-  console.log("botsing");
+if (spelerX - ememyX1 < 100 &&
+    spelerX - ememyX1 > -100 && 
+    spelerY - enemyY1 < 100 &&
+    spelerY - enemyY1 > -100) {
+    console.log("Botsing");
    }
   // botsing kogel tegen vijand
 
@@ -109,12 +90,13 @@ var tekenAlles = function () {
     background('black');
   //for (var x = startX; x < 50; x+= 300) {
 
+  // vijand
     rect(startX,startY, 100, 100);
-    if(startX <= -250){
-      startX=1280
-    };if(startX === 1280){
-      startY = random(700);
-    };startX = startX - 3;
+    //if(startX <= -250){
+    // startX=1280
+    //};if(startX === 1280){
+    //  startY = random(700);
+    //};startX = startX - 3;
 
       rect(startI,startK, 100, 100);
     if(startI <= -250){
@@ -129,10 +111,6 @@ var tekenAlles = function () {
     };if(startJ === 1280){
       startL = random(700);
     };startJ = startJ - 9;
-
-  
-  // vijand
-
   // kogel
 
   // speler
