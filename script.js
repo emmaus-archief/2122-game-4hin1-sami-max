@@ -90,6 +90,7 @@ var tekenAlles = function () {
   //for (var x = startX; x < 50; x+= 300) {
 
   // vijand
+  
     rect(startX,startY, 100, 100);
     if(startX <= -250){
      startX=1280
@@ -131,9 +132,9 @@ var tekenAlles = function () {
  */
 var checkGameOver = function () {
   if (spelerX - startX < 100 &&
-    spelerX - startX > -100 && 
-    spelerY - startY < 100 &&
-    spelerY - startY > -100) {
+    spelerX  - startX > -100 && 
+    spelerY  - startY < 100 &&
+    spelerY  - startY > -100) {
     console.log("Botsing");
     return true;
    }
