@@ -24,10 +24,11 @@ var spelStatus = SPELEN;
 var spelerX = 525; // x-positie van speler
 var spelerY = 450; // y-positie van speler
 
-var startX = [1100, 1350, 1500];
+var startX = [1100, 1350, 1500, 1650, 1800, 1950];
+var startY = [100, 1650, 1800, 600, 200, 190];
+var index = 0
 
-var startY = [100, 1650, 1800];
-
+var  hp = 69;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -85,14 +86,12 @@ var tekenAlles = function () {
   
   fill(100,100,100);       
     background('black');
-  //for (var x = startX; x < 50; x+= 300) {
-
   // vijand
-   for (let i = 0; i < 3; i++) {
-     fill(`white`)
-     rect(startX[i] - 50,startY[i] - 50, 100, 100);
-       fill("black");
-  ellipse(startX[i], startY[i], 10, 10);
+   for (let i = 0; i < startX.length ; i++) {
+    fill("black");
+    ellipse(startX[i], startY[i], 10, 10);
+    fill(100,100,100); 
+    rect(startX[i] - 50,startY[i] - 50, 100, 100);
     if(startX[i] <= -250){
      startX[i]=1400
     };if(startX[i] === 1400){
@@ -109,7 +108,7 @@ var tekenAlles = function () {
     };startX[0] = startX[0] - 4;
 
       rect(startX[1],startY[1], 100, 100);
-    if(startX[1] <= -250){
+    if(startX[1] <= -250){ 
       startX[1]=1280
     };if(startX[1] === 1280){
       startY[1] = random(700);
@@ -149,13 +148,14 @@ var tekenAlles = function () {
  * return true als het gameover is
  * anders return false
  */
+
 var checkGameOver = function () {
   if (spelerX - startX[0] < 75 &&
     spelerX  - startX[0] > -75 && 
     spelerY  - startY[0] < 75 &&
     spelerY  - startY[0] > -75) {
     console.log("Botsing");
-    return true;
+  return true;
    }
 
   if (spelerX - startX[1] < 75 &&
@@ -163,7 +163,7 @@ var checkGameOver = function () {
     spelerY - startY[1] < 75 &&
     spelerY - startY[1] > -75) {
     console.log("Botsing");
-    return true;
+  return true;
    }
 
   if (spelerX - startX[2] < 75 &&
@@ -171,7 +171,7 @@ var checkGameOver = function () {
     spelerY - startY[2] < 75 &&
     spelerY - startY[2] > -75) {
     console.log("Botsing");
-    return true;
+  return true;
     }
   // check of HP 0 is , of tijd op is, of ...
   return false;
@@ -213,9 +213,9 @@ function draw() {
     console.log("gameover");
     gameover2();
     if (keyIsDown(32)) {
-      spelerX[0] = 1100;
-      startY[0] = 100;
-      spelstatus = SPELEN;
+    startX = [1350, 1500, 1650, 1800, 1950, 2100];
+    startY = [100, 1650, 1800, 600, 200, 190];
+      spelStatus = SPELEN;
     }
     
     // teken game-over scherm
