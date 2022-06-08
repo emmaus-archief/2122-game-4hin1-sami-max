@@ -17,6 +17,8 @@ const SPACE = 32;
 const SPELEN = 1;
 const GAMEOVER = 2;
 
+var speed = 4;
+
 var spelStatus = SPELEN;
 
 var spelerX = 525; // x-positie van speler
@@ -86,8 +88,20 @@ var tekenAlles = function () {
   //for (var x = startX; x < 50; x+= 300) {
 
   // vijand
+   for (let i = 0; i < 3; i++) {
+     fill(`white`)
+     rect(startX[i] - 50,startY[i] - 50, 100, 100);
+       fill("black");
+  ellipse(startX[i], startY[i], 10, 10);
+    if(startX[i] <= -250){
+     startX[i]=1400
+    };if(startX[i] === 1400){
+      startY[i] = random(700);
+    };startX[i] = startX[i] - speed;
+     
+   }
   
-    rect(startX[0],startY[0], 100, 100);
+    /*rect(startX[0],startY[0], 100, 100);
     if(startX[0] <= -250){
      startX[0]=1280
     };if(startX[0] === 1280){
@@ -106,7 +120,7 @@ var tekenAlles = function () {
       startX[2]=1280
     };if(startX[2] === 1280){
       startY[2] = random(700);
-    };startX[2] = startX[2] - 7;
+  };startX[2] = startX[2] - 7;
 
 
     /*  rect(startX[2],startY[2], 100, 100);
@@ -136,26 +150,26 @@ var tekenAlles = function () {
  * anders return false
  */
 var checkGameOver = function () {
-  if (spelerX - startX[0] < 100 &&
-    spelerX  - startX[0] > -100 && 
-    spelerY  - startY[0] < 100 &&
-    spelerY  - startY[0] > -100) {
+  if (spelerX - startX[0] < 75 &&
+    spelerX  - startX[0] > -75 && 
+    spelerY  - startY[0] < 75 &&
+    spelerY  - startY[0] > -75) {
     console.log("Botsing");
     return true;
    }
 
-  if (spelerX - startX[1] < 100 &&
-    spelerX - startX[1] > -100 && 
-    spelerY - startY[1] < 100 &&
-    spelerY - startY[1] > -100) {
+  if (spelerX - startX[1] < 75 &&
+    spelerX - startX[1] > -75 && 
+    spelerY - startY[1] < 75 &&
+    spelerY - startY[1] > -75) {
     console.log("Botsing");
     return true;
    }
 
-  if (spelerX - startX[2] < 100 &&
-    spelerX - startX[2] > -100 && 
-    spelerY - startY[2] < 100 &&
-    spelerY - startY[2] > -100) {
+  if (spelerX - startX[2] < 75 &&
+    spelerX - startX[2] > -75 && 
+    spelerY - startY[2] < 75 &&
+    spelerY - startY[2] > -75) {
     console.log("Botsing");
     return true;
     }
