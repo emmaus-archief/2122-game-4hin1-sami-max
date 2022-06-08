@@ -22,13 +22,9 @@ var spelStatus = SPELEN;
 var spelerX = 525; // x-positie van speler
 var spelerY = 450; // y-positie van speler
 
-var startX = 1100;
-var startI = 1350;
-var startJ = 1500;
+var startX = [1100, 1350, 1500];
 
-var startY= 100;
-var startK = 1650;
-var startL = 1800;
+var startY = [100, 1650, 1800];
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -91,26 +87,35 @@ var tekenAlles = function () {
 
   // vijand
   
-    rect(startX,startY, 100, 100);
-    if(startX <= -250){
-     startX=1280
-    };if(startX === 1280){
-      startY = random(700);
-    };startX = startX - 4;
+    rect(startX[0],startY[0], 100, 100);
+    if(startX[0] <= -250){
+     startX[0]=1280
+    };if(startX[0] === 1280){
+      startY[0] = random(700);
+    };startX[0] = startX[0] - 4;
 
-      rect(startI,startK, 100, 100);
-    if(startI <= -250){
-      startI=1280
-    };if(startI === 1280){
-      startK = random(700);
-    };startI = startI - 7;
+      rect(startX[1],startY[1], 100, 100);
+    if(startX[1] <= -250){
+      startX[1]=1280
+    };if(startX[1] === 1280){
+      startY[1] = random(700);
+    };startX[1] = startX[1] - 7;
 
-      rect(startL,startJ, 100, 100);
-    if(startJ <= -250){
-      startJ=1280
-    };if(startJ === 1280){
-      startL = random(1200);
-    };startJ = startJ - 7;
+   rect(startX[2],startY[2], 100, 100);
+    if(startX[2] <= -250){
+      startX[2]=1280
+    };if(startX[2] === 1280){
+      startY[2] = random(700);
+    };startX[2] = startX[2] - 7;
+
+
+    /*  rect(startX[2],startY[2], 100, 100);
+    if(startX[2] <= -250){
+      startY[2]=1280
+    };if(startX[2] === 1280){
+      startX[2] = random(1200);
+   };startY[2] = startY[2] - 7;
+*/
   // kogel
 
   // speler
@@ -131,26 +136,26 @@ var tekenAlles = function () {
  * anders return false
  */
 var checkGameOver = function () {
-  if (spelerX - startX < 100 &&
-    spelerX  - startX > -100 && 
-    spelerY  - startY < 100 &&
-    spelerY  - startY > -100) {
+  if (spelerX - startX[0] < 100 &&
+    spelerX  - startX[0] > -100 && 
+    spelerY  - startY[0] < 100 &&
+    spelerY  - startY[0] > -100) {
     console.log("Botsing");
     return true;
    }
 
-  if (spelerX - startI < 100 &&
-    spelerX - startI > -100 && 
-    spelerY - startK < 100 &&
-    spelerY - startK > -100) {
+  if (spelerX - startX[1] < 100 &&
+    spelerX - startX[1] > -100 && 
+    spelerY - startY[1] < 100 &&
+    spelerY - startY[1] > -100) {
     console.log("Botsing");
     return true;
    }
 
-  if (spelerX - startL < 100 &&
-    spelerX - startL > -100 && 
-    spelerY - startJ < 100 &&
-    spelerY - startJ > -100) {
+  if (spelerX - startX[2] < 100 &&
+    spelerX - startX[2] > -100 && 
+    spelerY - startY[2] < 100 &&
+    spelerY - startY[2] > -100) {
     console.log("Botsing");
     return true;
     }
@@ -194,8 +199,8 @@ function draw() {
     console.log("gameover");
     gameover2();
     if (keyIsDown(32)) {
-      spelerX = 1100;
-      startY= 100;
+      spelerX[0] = 1100;
+      startY[0] = 100;
       spelstatus = SPELEN;
     }
     
