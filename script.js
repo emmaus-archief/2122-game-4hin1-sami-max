@@ -99,35 +99,10 @@ var tekenAlles = function () {
     };startX[i] = startX[i] - speed;
      
    }
+
+  // ster
   
-    /*rect(startX[0],startY[0], 100, 100);
-    if(startX[0] <= -250){
-     startX[0]=1280
-    };if(startX[0] === 1280){
-      startY[0] = random(700);
-    };startX[0] = startX[0] - 4;
-
-      rect(startX[1],startY[1], 100, 100);
-    if(startX[1] <= -250){ 
-      startX[1]=1280
-    };if(startX[1] === 1280){
-      startY[1] = random(700);
-    };startX[1] = startX[1] - 7;
-
-   rect(startX[2],startY[2], 100, 100);
-    if(startX[2] <= -250){
-      startX[2]=1280
-    };if(startX[2] === 1280){
-      startY[2] = random(700);
-  };startX[2] = startX[2] - 7;
-
-
-    /*  rect(startX[2],startY[2], 100, 100);
-    if(startX[2] <= -250){
-      startY[2]=1280
-    };if(startX[2] === 1280){
-      startX[2] = random(1200);
-   };startY[2] = startY[2] - 7;
+  
 */
   // kogel
 
@@ -150,29 +125,15 @@ var tekenAlles = function () {
  */
 
 var checkGameOver = function () {
-  if (spelerX - startX[0] < 75 &&
-    spelerX  - startX[0] > -75 && 
-    spelerY  - startY[0] < 75 &&
-    spelerY  - startY[0] > -75) {
+  for (let i = 0; i < startX.length ; i++) 
+  if (spelerX - startX[i] < 75 &&
+    spelerX  - startX[i] > -75 && 
+    spelerY  - startY[i] < 75 &&
+    spelerY  - startY[i] > -75) {
     console.log("Botsing");
   return true;
    }
 
-  if (spelerX - startX[1] < 75 &&
-    spelerX - startX[1] > -75 && 
-    spelerY - startY[1] < 75 &&
-    spelerY - startY[1] > -75) {
-    console.log("Botsing");
-  return true;
-   }
-
-  if (spelerX - startX[2] < 75 &&
-    spelerX - startX[2] > -75 && 
-    spelerY - startY[2] < 75 &&
-    spelerY - startY[2] > -75) {
-    console.log("Botsing");
-  return true;
-    }
   // check of HP 0 is , of tijd op is, of ...
   return false;
 };
@@ -215,6 +176,8 @@ function draw() {
     if (keyIsDown(32)) {
     startX = [1350, 1500, 1650, 1800, 1950, 2100];
     startY = [100, 1650, 1800, 600, 200, 190];
+    spelerX = 250
+    spelerY = 400
       spelStatus = SPELEN;
     }
     
