@@ -77,12 +77,14 @@ var uitleg2 = function () {
       background('black');
     fill(150,100,100); 
     textSize(125)
-    text("Sling Ping",350,150)
+    text("Astroids",350,150)
       textSize(50)
     text("start = enter",500,220)
     fill(100,100,100); 
     rect(200,400, 100, 100);
     text("Don't Touch",100,370)
+    fill('white')
+    text("Use arrows to move", 600, 370)
 };
 
 var gameover2 = function () {
@@ -99,7 +101,6 @@ var tekenAlles = function () {
   
   fill(100,100,100);       
     background('black');
-  // vijand
    for (let i = 0; i < startX.length ; i++) {
     fill("black");
     ellipse(startX[i], startY[i], 10, 10);
@@ -112,8 +113,8 @@ var tekenAlles = function () {
     };startX[i] = startX[i] - speed;
      
    }
-
-    fill(100,100,100); 
+  //score
+    fill("white"); 
     textSize(50)
     text(score,100,100)
 
