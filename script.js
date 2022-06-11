@@ -36,6 +36,14 @@ var  hp = 69;
 /**
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
+
+if (spelerY < 700){
+   
+  }
+  if (spelerY > 20){
+    
+  }
+
 var beweegAlles = function () {
   // speler
   if (keyIsDown(KEY_UP)) { 
@@ -148,7 +156,8 @@ var checkGameOver = function () {
     spelerY  - startY[i] > -75) {
     console.log("Botsing");
   return true;
-   }
+   }-
+
 
   // check of HP 0 is , of tijd op is, of ...
   return false;
