@@ -37,10 +37,10 @@ var  hp = 69;
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 
-if (spelerY < 700){
+if (spelerY <= 720){
    
   }
-  if (spelerY > 20){
+  if (spelerY => 1280){
     
   }
 
@@ -85,13 +85,14 @@ var uitleg2 = function () {
       background('black');
     fill(150,100,100); 
     textSize(125)
-    text("Astroids",350,150)
+    text("Astroids",400,150)
       textSize(50)
     text("start = enter",500,220)
     fill(100,100,100); 
     rect(200,400, 100, 100);
     text("Don't Touch",100,370)
     fill('white')
+    fill(100,100,100); 
     text("Use arrows to move", 600, 370)
 };
 
@@ -156,7 +157,7 @@ var checkGameOver = function () {
     spelerY  - startY[i] > -75) {
     console.log("Botsing");
   return true;
-   }-
+   }
 
 
   // check of HP 0 is , of tijd op is, of ...
@@ -190,8 +191,7 @@ function draw() {
   if (spelStatus === UITLEG) {
     console.log("uitleg");
     uitleg2();
-    if (keyIsDown(13)) {
-
+    if (keyIsDown(13)) {  
       spelStatus = SPELEN;
     }
   }
@@ -200,7 +200,7 @@ function draw() {
     console.log("spelen");
     beweegAlles();
     verwerkBotsing();
-    tekenAlles();
+    tekenAlles()  
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
