@@ -16,17 +16,17 @@ const KEY_DOWN = 40;
 const SPACE = 32;
 const SPELEN = 1;
 const GAMEOVER = 2;
+const UITLEG = 3;
 
 var speed = 4;
-
-var spelStatus = SPELEN;
+var score = 0;
+var spelStatus = UITLEG;
 
 var spelerX = 525; // x-positie van speler
 var spelerY = 450; // y-positie van speler
 
-var startX = [1100, 1350, 1500, 1650, 1800, 1950];
+var startX = [1300, 1450, 1600, 1750, 1900, 2050];
 var startY = [100, 1650, 1800, 600, 200, 190];
-var index = 0
 
 var  hp = 69;
 /* ********************************************* */
@@ -73,14 +73,24 @@ var verwerkBotsing = function () {
 
 };
 
-var gameover2 = function () {
-    fill(100,100,100); 
-    textSize(50)
-    text("game over",100,100)
+var uitleg2 = function () {
+      background('black');
+    fill(150,100,100); 
+    textSize(125)
+    text("Sling Ping",350,150)
+      textSize(50)
+    text("start = enter",500,220)
 };
-/**
- * Tekent spelscherm
- */
+
+var gameover2 = function () {
+    fill(150,100,100); 
+    textSize(125)
+    text("game over",350,150)
+    textSize(50)
+    text("restart = space",480,200)
+};
+
+//Tekent spelscherm
 
 var tekenAlles = function () {
   
@@ -100,10 +110,12 @@ var tekenAlles = function () {
      
    }
 
+    fill(100,100,100); 
+    textSize(50)
+    text(score,100,100)
+
   // ster
-  
-  
-*/
+
   // kogel
 
   // speler
@@ -161,6 +173,16 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
+  
+  if (spelStatus === UITLEG) {
+    console.log("uitleg");
+    uitleg2();
+    if (keyIsDown(13)) {
+
+      spelStatus = SPELEN;
+    }
+  }
+  
   if (spelStatus === SPELEN) {
     console.log("spelen");
     beweegAlles();
@@ -170,6 +192,7 @@ function draw() {
       spelStatus = GAMEOVER;
     }
   }
+      // teken game-over scherm
   if (spelStatus === GAMEOVER) {
     console.log("gameover");
     gameover2();
@@ -180,8 +203,5 @@ function draw() {
     spelerY = 400
       spelStatus = SPELEN;
     }
-    
-    // teken game-over scherm
-
-  }
+}
 }
