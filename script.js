@@ -141,7 +141,7 @@ var tekenAlles = function () {
     fill("black");
     ellipse(sterX, sterY, 10, 10);
     fill(150,150,25);
-    rect(sterX - 50,sterY - 50, 50, 50);
+    rect(sterX - 25,sterY - 25, 50, 50);
     if(sterX <= -250){
      sterX=1400
     };if(sterX === 1400){
