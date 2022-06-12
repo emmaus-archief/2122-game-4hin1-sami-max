@@ -91,7 +91,6 @@ var beweegAlles = function () {
   // vijand
 
   // kogel
-
 /**
  * Checkt botsingen
  * Verwijdert neergeschoten dingen
@@ -211,6 +210,12 @@ image(img2, startX[i] - 60, startY[i] - 60, 120, 120)
 }
 
 image(img3, sterX - 25, sterY - 25, 50, 50)  
+  
+    //score
+    fill(200,200,200); 
+    textSize(50)
+    text(score,100,100)
+  
 };
 
 function preload() {
@@ -222,6 +227,8 @@ function preload() {
 
 
 
+    //score
+  
   //fill(black)
   //rect(0,0,1280,720)
 
@@ -257,11 +264,6 @@ function setup() {
   background('black');
 }
 
-
-  //score
-    fill(200,200,200); 
-    textSize(50)
-    text(score,100,100)
 /**
  * draw
  * de code in deze functie wordt 50 keer per seconde
