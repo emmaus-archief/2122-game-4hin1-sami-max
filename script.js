@@ -30,6 +30,7 @@ var startY = [100, 1650, 1800, 600, 200, 190];
 var sterX  = 1700;
 var sterY  = 600;
 
+var img; //plaatje schip
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -37,6 +38,10 @@ var sterY  = 600;
 /**
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
+
+function preload() {
+  img = loadImage('spaceship.png');
+}
 
 if (spelerY <= 720){
    
@@ -125,6 +130,9 @@ var gameover2 = function () {
 //Tekent spelscherm
 
 var tekenAlles = function () {
+
+
+  
   
     // ster
     background('black');
@@ -182,6 +190,10 @@ var tekenAlles = function () {
   rect(spelerX - 25, spelerY - 25, 50, 50);
   // punten en health
 
+function setup() {
+  image(img, spelerX - 40, spelerY - 40, 80, 80);
+}
+  
 };
 
   //fill(black)
