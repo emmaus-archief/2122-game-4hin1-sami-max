@@ -96,14 +96,7 @@ var beweegAlles = function () {
  * Verwijdert neergeschoten dingen
  * Updatet globale variabelen punten en health
  */
-var verwerkBotsing = function () {
-  // botsing speler tegen vijand
 
-  // botsing kogel tegen vijand
-
-  // update punten en health
-
-};
 
 var uitleg2 = function () {
       background('black');
@@ -113,13 +106,13 @@ var uitleg2 = function () {
       textSize(50)
     text("start = enter",500,220)
     fill(150,100,100); 
-    rect(200,400, 100, 100);
+    image(img2,190,400, 100, 100);
     text("Meteorite -1",100,370)
     fill('white')
     fill(100,100,100); 
     text("Use arrows to move", 420, 370)
     fill(150,150,25);
-    rect(1020,400, 50, 50);
+    image(img3,1015,400, 50, 50);
     text("Star +1",950,370)
 };
 
@@ -188,7 +181,6 @@ var tekenAlles = function () {
     startY[i] = 800
   }
 
-  // kogel
 
   // speler
   fill("black");
@@ -226,13 +218,6 @@ function preload() {
   }
 
 
-
-    //score
-  
-  //fill(black)
-  //rect(0,0,1280,720)
-
-
 /**
  * return true als het gameover is
  * anders return false
@@ -243,7 +228,7 @@ var checkGameOver = function () {
     
   return true;
   }
-  // check of HP 0 is , of tijd op is, of ...
+  
   return false;
 };
 
@@ -282,7 +267,6 @@ function draw() {
   if (spelStatus === SPELEN) {
     console.log("spelen");
     beweegAlles();
-    verwerkBotsing();
     tekenAlles()  
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
