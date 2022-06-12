@@ -276,7 +276,8 @@ function draw() {
     sterX  = 1700;
     sterY  = 600;
     score = 3;
-      spelStatus = SPELEN;
+    speed = 4;
+    spelStatus = SPELEN;
     }
 }
 }
