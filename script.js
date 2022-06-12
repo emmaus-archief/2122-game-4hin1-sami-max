@@ -45,6 +45,7 @@ if (spelerY <= 720){
   }
 
 var beweegAlles = function () {
+  
   // speler
   if (keyIsDown(KEY_UP)) { 
   spelerY = spelerY - 3;
@@ -62,6 +63,19 @@ var beweegAlles = function () {
   spelerX = spelerX + 3;
 }
 
+  if (spelerY > 720 && keyIsDown(KEY_DOWN) ){
+    spelerY = 0;
+  }
+  if (spelerY < 0 && keyIsDown(KEY_UP)){
+    spelerY = 720; 
+  }
+
+  if (spelerX > 1280 && keyIsDown(KEY_RIGHT) ){
+    spelerX = 0;
+  }
+  if (spelerX < 0 && keyIsDown(KEY_LEFT)){
+    spelerX = 1280; 
+  }
 };
   // vijand
 
