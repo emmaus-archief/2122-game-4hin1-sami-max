@@ -1,3 +1,6 @@
+
+
+
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
@@ -32,7 +35,10 @@ var sterY  = 600;
 var s = [4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20];
 var n = 0
 
-var img; //plaatje schip
+var img;//plaatje schip
+var img2;// plaatje meteoriet
+var img3;// plaatje ster
+var img4;// achtergrond
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -41,9 +47,6 @@ var img; //plaatje schip
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 
-function preload() {
-  img = loadImage('spaceship.png');
-}
 
 if (spelerY <= 720){
    
@@ -140,7 +143,7 @@ var tekenAlles = function () {
     background('black');
     fill("black");
     ellipse(sterX, sterY, 10, 10);
-    fill(150,150,25);
+    fill(0,0,0);
     rect(sterX - 25,sterY - 25, 50, 50);
     if(sterX <= -250){
      sterX=1400
@@ -161,7 +164,7 @@ var tekenAlles = function () {
     for (let i = 0; i < startX.length ; i++) {
     fill("black");
     ellipse(startX[i], startY[i], 10, 10);
-    fill(150,100,100); 
+    fill(0,0,0); 
     rect(startX[i] - 50,startY[i] - 50, 100, 100);
     if(startX[i] <= -250){
      startX[i]=1400
@@ -185,25 +188,39 @@ var tekenAlles = function () {
     score = score - 1
     startY[i] = 800
   }
-  //score
-    fill(200,200,200); 
-    textSize(50)
-    text(score,100,100)
 
   // kogel
 
   // speler
   fill("black");
   ellipse(spelerX , spelerY, 10, 10);
-  fill(100,150,150); 
+  fill(0,0,0); 
   rect(spelerX - 25, spelerY - 25, 50, 50);
   // punten en health
 
-function setup() {
-  image(img, spelerX - 40, spelerY - 40, 80, 80);
+image(img4, 0, 0, 2000, 2000)  
+
+push() 
+translate(spelerX + 40, spelerY - 40)
+scale(-1, 1);
+image(img,0 ,0 , 80, 80);
+pop()
+
+for (let i = 0; i < startX.length ; i++){
+image(img2, startX[i] - 60, startY[i] - 60, 120, 120)  
 }
-  
+
+image(img3, sterX - 25, sterY - 25, 50, 50)  
 };
+
+function preload() {
+  img = loadImage('spaceship.png');
+  img2 = loadImage('meteor.png');
+  img3 = loadImage('star.png');
+  img4 = loadImage('star.background.png')
+  }
+
+
 
   //fill(black)
   //rect(0,0,1280,720)
@@ -240,6 +257,11 @@ function setup() {
   background('black');
 }
 
+
+  //score
+    fill(200,200,200); 
+    textSize(50)
+    text(score,100,100)
 /**
  * draw
  * de code in deze functie wordt 50 keer per seconde
