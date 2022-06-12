@@ -27,6 +27,8 @@ var spelerY = 450; // y-positie van speler
 
 var startX = [1300, 1450, 1600, 1750, 1900, 2050];
 var startY = [100, 1650, 1800, 600, 200, 190];
+var sterX  = 1700;
+var sterY  = 600;
 
 var  hp = 69;
 /* ********************************************* */
@@ -121,7 +123,6 @@ var gameover2 = function () {
 
 var tekenAlles = function () {
   
-    fill(100,100,100);       
     background('black');
     for (let i = 0; i < startX.length ; i++) {
     fill("black");
@@ -135,6 +136,13 @@ var tekenAlles = function () {
     };startX[i] = startX[i] - speed;
      
    }
+    if (spelerX - sterX < 50 &&
+    spelerX  - sterX > -50 && 
+    spelerY  - sterY < 50 &&
+    spelerY  - sterY > -50) {
+    console.log("BotsingSter");
+    score= score + 1;
+   }
   //score
     fill("white"); 
     textSize(50)
@@ -142,6 +150,16 @@ var tekenAlles = function () {
 
   // ster
 
+    fill("black");
+    ellipse(sterX, sterY, 10, 10);
+    fill(150,150,25);
+    rect(sterX - 50,sterY - 50, 50, 50);
+    if(sterX <= -250){
+     sterX=1400
+    };if(sterX === 1400){
+      sterY = random(700);
+    };sterX = sterX - speed;
+      
   // kogel
 
   // speler
@@ -227,6 +245,9 @@ function draw() {
     startY = [100, 1650, 1800, 600, 200, 190];
     spelerX = 250
     spelerY = 400
+    sterX  = 1700;
+    sterY  = 600;
+    score = 0
       spelStatus = SPELEN;
     }
 }
