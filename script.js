@@ -83,12 +83,12 @@ var verwerkBotsing = function () {
 
 var uitleg2 = function () {
       background('black');
-    fill(150,100,100); 
+    fill(100,150,150);
     textSize(125)
     text("Astroids",400,150)
       textSize(50)
     text("start = enter",500,220)
-    fill(100,100,100); 
+    fill(150,100,100); 
     rect(200,400, 100, 100);
     text("Don't Touch",100,370)
     fill('white')
@@ -97,7 +97,6 @@ var uitleg2 = function () {
 };
 
 var gameover2 = function () {
-    fill(150,100,100); 
     textSize(125)
     text("game over",350,150)
     textSize(50)
@@ -108,12 +107,12 @@ var gameover2 = function () {
 
 var tekenAlles = function () {
   
-  fill(100,100,100);       
+    fill(100,100,100);       
     background('black');
-   for (let i = 0; i < startX.length ; i++) {
+    for (let i = 0; i < startX.length ; i++) {
     fill("black");
     ellipse(startX[i], startY[i], 10, 10);
-    fill(100,100,100); 
+    fill(150,100,100); 
     rect(startX[i] - 50,startY[i] - 50, 100, 100);
     if(startX[i] <= -250){
      startX[i]=1400
@@ -132,10 +131,10 @@ var tekenAlles = function () {
   // kogel
 
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX , spelerY, 10, 10);
+  fill(100,150,150); 
+  rect(spelerX - 25, spelerY - 25, 50, 50);
   // punten en health
 
 };
