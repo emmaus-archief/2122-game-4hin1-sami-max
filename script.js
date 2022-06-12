@@ -19,7 +19,7 @@ const GAMEOVER = 2;
 const UITLEG = 3;
 
 var speed = 4;
-var score = 0;
+var score = 10;
 var spelStatus = UITLEG;
 
 var spelerX = 525; // x-positie van speler
@@ -30,7 +30,6 @@ var startY = [100, 1650, 1800, 600, 200, 190];
 var sterX  = 1700;
 var sterY  = 600;
 
-var  hp = 69;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -160,6 +159,15 @@ var tekenAlles = function () {
     };startX[i] = startX[i] - speed;
      
    }
+
+    for (let i = 0; i < startX.length ; i++) 
+  if (spelerX - startX[i] < 75 &&
+    spelerX  - startX[i] > -75 && 
+    spelerY  - startY[i] < 75 &&
+    spelerY  - startY[i] > -75) {
+    console.log("Botsing");
+    score = score - 10
+  }
   //score
     fill(200,200,200); 
     textSize(50)
@@ -186,15 +194,10 @@ var tekenAlles = function () {
  */
 
 var checkGameOver = function () {
-  for (let i = 0; i < startX.length ; i++) 
-  if (spelerX - startX[i] < 75 &&
-    spelerX  - startX[i] > -75 && 
-    spelerY  - startY[i] < 75 &&
-    spelerY  - startY[i] > -75) {
-    console.log("Botsing");
+  if(score <= -1){
+    
   return true;
-   }
-
+  }
   // check of HP 0 is , of tijd op is, of ...
   return false;
 };
@@ -251,7 +254,7 @@ function draw() {
     spelerY = 400
     sterX  = 1700;
     sterY  = 600;
-    score = 0
+    score = 10;
       spelStatus = SPELEN;
     }
 }
