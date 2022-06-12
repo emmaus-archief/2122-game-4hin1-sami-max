@@ -109,10 +109,14 @@ var uitleg2 = function () {
     text("Don't Touch",100,370)
     fill('white')
     fill(100,100,100); 
-    text("Use arrows to move", 600, 370)
+    text("Use arrows to move", 420, 370)
+    fill(150,150,25);
+    rect(1000,400, 50, 50);
+    text("Star",975,370)
 };
 
 var gameover2 = function () {
+    fill(200,100,100); 
     textSize(125)
     text("game over",350,150)
     textSize(50)
@@ -123,7 +127,27 @@ var gameover2 = function () {
 
 var tekenAlles = function () {
   
+    // ster
     background('black');
+    fill("black");
+    ellipse(sterX, sterY, 10, 10);
+    fill(150,150,25);
+    rect(sterX - 50,sterY - 50, 50, 50);
+    if(sterX <= -250){
+     sterX=1400
+    };if(sterX === 1400){
+      sterY = random(700);
+    };sterX = sterX - speed;
+  
+      if (spelerX - sterX < 50 &&
+    spelerX  - sterX > -50 && 
+    spelerY  - sterY < 50 &&
+    spelerY  - sterY > -50) {
+    console.log("BotsingSter");
+    score= score + 1;
+   }
+
+    // enemy
     for (let i = 0; i < startX.length ; i++) {
     fill("black");
     ellipse(startX[i], startY[i], 10, 10);
@@ -136,30 +160,11 @@ var tekenAlles = function () {
     };startX[i] = startX[i] - speed;
      
    }
-    if (spelerX - sterX < 50 &&
-    spelerX  - sterX > -50 && 
-    spelerY  - sterY < 50 &&
-    spelerY  - sterY > -50) {
-    console.log("BotsingSter");
-    score= score + 1;
-   }
   //score
-    fill("white"); 
+    fill(200,200,200); 
     textSize(50)
     text(score,100,100)
 
-  // ster
-
-    fill("black");
-    ellipse(sterX, sterY, 10, 10);
-    fill(150,150,25);
-    rect(sterX - 50,sterY - 50, 50, 50);
-    if(sterX <= -250){
-     sterX=1400
-    };if(sterX === 1400){
-      sterY = random(700);
-    };sterX = sterX - speed;
-      
   // kogel
 
   // speler
@@ -189,7 +194,6 @@ var checkGameOver = function () {
     console.log("Botsing");
   return true;
    }
-
 
   // check of HP 0 is , of tijd op is, of ...
   return false;
